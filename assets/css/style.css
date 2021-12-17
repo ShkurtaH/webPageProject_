@@ -1,0 +1,215 @@
+/* General */
+body{
+    margin: 0;
+    font-family: 'Literata', serif;
+
+}
+.btn{
+    padding: 15px 20px;
+    vertical-align: middle;
+    background: #cfcfbb;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    transition: .5s ease-in;
+    text-transform: uppercase;
+}
+.btn:hover{
+    background: #767c2a;
+}
+.space{
+    padding: 100px 80px 50px;
+}
+.center{
+    text-align: center;
+}
+h2{
+    font-size: 55px;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+/* Header */
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    border-bottom: 1px solid white;
+}
+.header .logo{
+    width: 128px;
+    height: 54px;
+}
+.header .logo figure{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.header .logo figure a img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.header .navigation,
+.header .contact{
+    margin-top: 15px;
+}
+
+.header .navigation ul{
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+.header .navigation ul li{
+    list-style: none;
+    display: inline-block;
+}
+.header .navigation ul li a{
+    padding: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fdfdfd;
+    transition: .5s ease-in;
+}
+.header .navigation ul li a:hover{
+    color: #767c2a;
+}
+.header .navigation ul li a.active{
+    color: #767c2a;
+    font-weight: 600;
+}
+
+
+/* Banner */
+.banner{
+    height: 350px;
+    position: relative;
+}
+.banner .banner-content{
+    position: absolute;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15%;
+    color: #fff;
+    font-style: italic;
+}
+.banner .banner-content .btn{
+    margin-top: 15px;
+    font-style: normal;
+    display: inline-block;
+    width: 120px;
+    text-transform: uppercase;
+}
+
+
+/* Main Content */
+.main-content{
+    display: flex;
+    justify-content: space-between;
+}
+.main-content .main-content-image{
+    margin-right: 30px;
+}
+.main-content .main-content-image,
+.main-content .main-content-description{
+    width: 50%;
+}
+.main-content .main-content-image img{
+    width: 100%;
+    object-fit: contain;
+}
+
+/* Portolio */
+.portfolio.space{
+    padding-top: 0;
+    padding-bottom: 100px;
+}
+.portfolio .center h2{
+    margin-bottom: 50px;
+}
+
+.portfolio .portfolio-item{
+    width: 33%;
+    padding: 0 0px 0 0;
+    display: inline-block;
+}
+.portfolio .portfolio-item:last-child{
+    padding-right: 0;
+}
+.portfolio .portfolio-item figure{
+    margin: 0;
+    overflow: hidden;
+    
+}
+.portfolio .portfolio-item figure,
+.portfolio .portfolio-item figure img{
+    width: 100%;
+    height: 400px;
+    display: inline-block;
+    transition: transform .5s ease-in;
+}
+
+.portfolio .portfolio-item figure:hover img{
+    transform: scale(1.5);
+}
+
+/* Footer */
+footer{
+    background: #cfcfbb;
+}
+footer p{
+    color: #fff;
+    margin: 0;
+}
+footer .content.space{
+    padding: 50px 80px 30px;
+}
+footer .content .footer-widget{
+    width: 33%;
+    display: inline-block;
+}
+footer .content .footer-widget a{
+    display: inline-block;
+    width: 128px;
+    height: 54px;
+}
+footer .content .footer-widget a img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+footer .content .footer-widget h3{
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+footer .content .footer-widget .footer-content a{
+    display: block;
+    width: unset;
+    height: unset;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+footer .content .footer-widget .footer-content a:last-child{
+    margin-bottom: 0;
+}
+footer .footer-widget .social-media-list.footer-content a{
+    display: inline-block;
+    padding-right: 15px;
+}
+footer .content .footer-bottom{
+    margin-top: 80px;
+    padding-top: 20px;
+    border-top: 1px solid #fff;
+}
+footer .content .footer-bottom p{
+    margin: 0;
+}
