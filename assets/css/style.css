@@ -4,6 +4,7 @@ body{
     font-family: 'Literata', serif;
 
 }
+
 .btn{
     padding: 10px 30px;
     vertical-align: middle;
@@ -154,7 +155,7 @@ h2{
 /*Main Content of page about*/
 .about-main-content{
     background: white;
-    padding-bottom:70px;
+    padding:70px 0;
 }
 .main-container ul {
     margin-right: 40px;
@@ -167,18 +168,50 @@ h2{
 .about-main-content .main-container ul li{
     list-style: none;
     display: inline-block;
-    padding: 0 30px;
     text-align: center;
+    margin-right: 30px;
+    border-radius: 3px;
+    background: white;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    max-height: 100%;
+    padding: 40px;
+    height: 420px;
+
 }
 .about-main-content .main-container ul li .feature-title{
-    border-bottom: 5px solid #cfcfbb ;
-    
+    position: relative;
+    padding-bottom: 0;
+    font-size: 34px;
+    margin-top: 20px; 
+}
+.about-main-content .main-container ul li .feature-title:before{
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    width: 80px;
+    height: 3px;
+    background: #cfcfbb;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.about-main-content .main-container ul li .icon-feature{
+    background: #cfcfbb;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: relative;
+    margin-top: 20px;
     
 }
 .about-main-content .main-container ul li .icon-feature img{
-    width: 40%;
-    height: 40%;
+    width: 30px;
+    height: 30px;
     object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     
 }
 .feature-label{
@@ -373,15 +406,27 @@ form .text-error{
 } 
 .portfolio .portfolio-page-item figure,
 .portfolio .portfolio-page-item figure img{
-    width: 100%;
-    height: 400px;
+    width: auto;
+    height: 560px;
     display: inline-block;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     transition: transform .5s ease-in;
+    object-fit: contain;
 }
 
 .portfolio .portfolio-page-item figure:hover img{
-    transform: scale(1.5);
+    transform: scale(1.2);
+}
+
+
+
+
+/* Login/Register Form */
+.login-form{
+    width: 750px;
+}
+.login-form .form-group-submit-wrapper{
+    width: 543px;
 }
 
 
