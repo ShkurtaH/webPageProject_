@@ -20,11 +20,11 @@ body{
     background:#626919;
 }
 .space{
-    padding: 60px 80px 60px;
+    padding: 40px 80px 40px;
 }
 .center{
     text-align: center;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
 }
 h2{
     font-size: 45px;
@@ -376,6 +376,8 @@ form .text-error{
     overflow: hidden;
     max-width: 100%;
     position: relative;
+    display: block;
+    object-fit: contain;
     box-shadow:rgba(149, 157, 165, 0.2) 0px 8px 24px;;
     margin: auto;
     z-index: 0;
@@ -387,6 +389,8 @@ form .text-error{
   }
   .mySlides img {
     display: block;
+    object-fit: cover;
+    height: 550px;
     width: 100%;
   }
   
@@ -516,9 +520,6 @@ form .text-error{
 
 
 /* Login/Register Form */
-.login-form{
-    width: 750px;
-}
 .login-form .form-group-submit-wrapper{
     width: 543px;
 }
@@ -584,6 +585,9 @@ footer .content .footer-bottom{
 }
 footer .content .footer-bottom p{
     margin: 0;
+}
+.footer-bottom{
+    text-align: center;
 }
 
 

@@ -39,7 +39,7 @@
                     </p>
                 </div>
         </div>
-        <div class="footer-bottom center">
+        <div class="footer-bottom ">
             <p>
                 Copyright &copy; [Photography]. All rights reserved | Design by Shkurta Hoxha and Vanesa Hoxha
             </p>

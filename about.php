@@ -3,7 +3,7 @@
 <main>
     <!-- Banner Starts -->
     <section class="banner"
-             style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.5)), url('assets/images/general/about-banner1.jpg');background-size: cover; background-position: center;position:relative; padding: 0 0 190px 0;">
+             style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.5)), url('assets/images/general/about-banner.jpg');background-size: cover; background-position: center;position:relative; padding: 0 0 190px 0;">
         <div class="header">
             <div class="logo">
                 <figure>

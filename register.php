@@ -45,17 +45,17 @@
                 <div class="form-wrapper">
                     <div class="form-group">
                         <input type="text" name="username" value="" placeholder="First Name" class="main-input"
-                               id="first-name" required>
+                               id="first-name" >
                         <div id="first-name-error" class="text-error"></div>
                     </div>
                     <div class="form-group">
                         <input type="email" name="email" value="" placeholder="E-Mail" class="main-input"
-                               id="register-email" required>
-                        <div id="register-email-error" class="text-error"></div>
+                               id="register-email" >
+                        <div id="email-register-error" class="text-error"></div>
                     </div>
                     <div class="form-group">
                         <input type="password" name="password" value="" placeholder="Password" class="main-input"
-                               id="pwd-register" required>
+                               id="pwd-register" >
                         <div id="pwd-register-error" class="text-error"></div>
                     </div>
                     <div class="form-group">
@@ -70,28 +70,95 @@
         </div>
 
     </div>
-<?php
-require('db/db.php');
-// If form submitted, insert values into the database.
-if (isset($_REQUEST['username'])) {
-    // removes backslashes
-    $username = stripslashes($_REQUEST['username']);
-    //escapes special characters in a string
-    $username = mysqli_real_escape_string($con, $username);
-    $email = stripslashes($_REQUEST['email']);
-    $email = mysqli_real_escape_string($con, $email);
-    $password = stripslashes($_REQUEST['password']);
-    $password = mysqli_real_escape_string($con, $password);
-    $trn_date = date("Y-m-d H:i:s");
-    $query = "INSERT into `users` (username, password, email, trn_date)
-VALUES ('$username', '" . md5($password) . "', '$email', '$trn_date')";
-    $result = mysqli_query($con, $query);
-    if ($result) {
-        echo "<div class='form'>
-<h3>You are registered successfully.</h3>
-<br/>Click here to <a href='login.php'>Login</a></div>";
-    }
-} else {
-    ?>
-<?php } ?>
+
+    <script>
+
+        var button = document.getElementById("registerBtn");
+
+        var username = document.forms["contact-form"]["username"];
+        var email = document.forms["contact-form"]["email"];
+        var message = document.forms["contact-form"]["message"];
+
+        var emailRegEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+        var name_error = document.getElementById("name-error");
+        var surname_error = document.getElementById("surname-error");
+        var email_error = document.getElementById("email-error");
+        var message_error = document.getElementById("message-error");
+
+        Name.addEventListener("blur", verifyName, true);
+        surname.addEventListener("blur", verifySurname, true);
+        email.addEventListener("blur", verifyEmail, true);
+        message.addEventListener("blur", verifyMessage, true);
+
+
+        function verifyName() {
+            if (Name.value != "") {
+                name_error.innerHTML = "";
+                return true;
+            }
+        }
+
+        function verifySurname() {
+            if (surname.value != "") {
+                surname_error.innerHTML = "";
+                return true;
+            }
+        }
+
+        function verifyEmail() {
+
+            if (email.value != "") {
+                email_error.innerHTML = "";
+                return true;
+            } else {
+                if (emailRegEx.test(email)) {
+                    email_error.innerHTML = "";
+                } else {
+                    email_error.textContent = "Email should be something like this : shkurtehoxha@gmail.com";
+                    event.preventDefault();
+                }
+            }
+
+        }
+
+        function verifyMessage() {
+            if (message.value != "") {
+                message_error.innerHTML = "";
+                return true;
+            }
+        }
+
+        button.addEventListener("click", function (event) {
+
+            if (Name.value == "") {
+                name_error.textContent = 'This field is a required field.';
+                Name.focus();
+                event.preventDefault();
+            }
+            if (surname.value == "") {
+                surname_error.textContent = 'This field is a required field.';
+                surname.focus();
+                event.preventDefault();
+            }
+
+            if (email.value == "") {
+                email_error.textContent = "This field is a required field.";
+                email.focus();
+                event.preventDefault();
+            } else {
+                if (emailRegEx.test(email.value)) {
+                    email_error.innerText = "";
+                } else {
+                    email_error.innerText = "Email must be something like this shkurtehoxha@gmail.com!";
+                    event.preventDefault();
+                }
+
+            }
+        });
+
+    </script>
+
 <?php include('layout/footer.php') ?>
+
+

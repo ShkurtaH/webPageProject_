@@ -122,19 +122,19 @@
 
 <script>
 
-    let button = document.getElementById("submitBtn");
+    var button = document.getElementById("submitBtn");
 
-    let Name = document.forms["contact-form"]["name"];
-    let surname = document.forms["contact-form"]["surname"];
-    let email = document.forms["contact-form"]["email"];
-    let message = document.forms["contact-form"]["message"];
+    var Name = document.forms["contact-form"]["name"];
+    var surname = document.forms["contact-form"]["surname"];
+    var email = document.forms["contact-form"]["email"];
+    var message = document.forms["contact-form"]["message"];
 
-    let emailRegEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    var emailRegEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-    let name_error = document.getElementById("name-error");
-    let surname_error = document.getElementById("surname-error");
-    let email_error = document.getElementById("email-error");
-    let message_error = document.getElementById("message-error");
+    var name_error = document.getElementById("name-error");
+    var surname_error = document.getElementById("surname-error");
+    var email_error = document.getElementById("email-error");
+    var message_error = document.getElementById("message-error");
 
     Name.addEventListener("blur", verifyName, true);
     surname.addEventListener("blur", verifySurname, true);
@@ -165,7 +165,7 @@
             if (emailRegEx.test(email)) {
                 email_error.innerHTML = "";
             } else {
-                email_error.textContent = "Email should be something like that: shkurtehoxha@gmail.com";
+                email_error.textContent = "Email should be something like this : shkurtehoxha@gmail.com";
                 event.preventDefault();
             }
         }
@@ -212,6 +212,6 @@
         }
 
 
-    })
+    });
 
 </script>
