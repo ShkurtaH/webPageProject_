@@ -54,7 +54,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
                 <input type="file" name="icon" value="<?php echo $data['icon']; ?>" placeholder="Icon" class="main-input">
             </div>
             <div class="form-group">
-                <textarea name="teaser" id="" cols="30" rows="10" value="<?php echo $data['teaser']; ?>" class="main-input" placeholder="Teaser"></textarea>
+                <textarea name="teaser" id="" cols="30" rows="10" class="main-input" placeholder="Teaser"><?php echo $data['teaser']; ?></textarea>
             </div>
             <div class="form-group">
                 <input type="submit" name="submit" class="btn" value="Update">

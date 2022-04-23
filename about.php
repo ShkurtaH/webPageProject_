@@ -71,43 +71,23 @@
             <h1>MEET THE TEAM</h1>
         </div>
         <div class="teamworker">
-            <div class="photographer">
-                <img src="assets/images/general/Shkurta-Photographer.jpg" alt="Shkurta">
-                <div class="biography-box">
-                    <h2>Shkurta Hoxha</h2>
-                    <p class="description-text">Founder & Photographer</p>
-                    <p>As a photographer I want my photos to imagine a bold, exciting world—one in which the
-                        subject, be it a product or a person, stands out, shines. Viewers need to be transported,
-                        and my photos achieve that through careful compositions of color and tone. This is the end
-                        result of a process by which I bring the creative brief to life and make the subject part of
-                        a story.
-                        <br>
-                        This is the power that photography’s always had for me. I recognized it when I took my first
-                        photo class, back when I was growing up in Puerto Rico. So, I apprenticed with photographers
-                        and shot for a variety of publications. Eventually, to continue my education, I moved to the
-                        United States. Here I’ve broadened my capacities and become an art director, shepherding
-                        ideas from briefs to concepts to production shoots to deliverables. To each project I bring
-                        my experience and my keen eye.
-                    </p>
+            <?php
+            $crud = new crud();
+            $result = $crud->selectalldata("team");
+            while ($data = mysqli_fetch_array($result)) {
+                ?>
+                <div class="photographer">
+                    <img src="assets/images/general/<?php echo $data['image']; ?>" alt="Shkurta">
+                    <div class="biography-box">
+                        <h2><?php echo $data['firstname']; ?> <?php echo $data['lastname']; ?></h2>
+                        <p class="description-text"><?php echo $data['position']; ?></p>
+                        <?php echo $data['biography']; ?>
+                    </div>
                 </div>
-            </div>
-            <div class="photographer">
-                <img src="assets/images/general/Vanesa-Photographer.jpg" alt="Shkurta">
-                <div class="biography-box">
-                    <h2>Vanesa Hoxha</h2>
-                    <p class="description-text">Photographer</p>
-                    <p>It is important to know that a great photographer is one who captures all that is commonly
-                        unnoticed. I work with a different ‘eye’ altogether. The lens of a camera explores a world
-                        of various perspectives. Some treat photography as an art, they feel it has the power to
-                        manipulate realities and present them in an attractive way. Others feel that art and
-                        photography are miles apart, since a photograph reflects exactly what’s in front of the
-                        camera.</p>
-                </div>
-
-            </div>
+            <?php }
+            ?>
         </div>
     </div>
     <!--Main content ends-->
 </main>
-
 <?php include('layout/footer.php') ?>

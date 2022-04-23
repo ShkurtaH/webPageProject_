@@ -6,27 +6,20 @@ $crud = new crud();
 
 if (isset($_POST['submit'])) {
     $data = array(
-        "first-name" => $crud->escape_string($_POST['first-name']),
-        "last-name" => $crud->escape_string($_POST['last-name']),
+        "firstname" => $crud->escape_string($_POST['firstname']),
+        "lastname" => $crud->escape_string($_POST['lastname']),
         "position" => $crud->escape_string($_POST['position']),
         "image" => $crud->escape_string($_POST['image']),
         "biography" => $crud->escape_string($_POST['biography']),
     );
-
-
     $crud->insert($data, 'team');
-
-
     if ($data) {
         echo 'insert successfully';
         header('location:team-list.php');
     } else {
         echo 'try again';
     }
-
-
 }
-
 session_start();
 if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
 <nav>
@@ -43,18 +36,18 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
         </div>
         <div class="tabset">
             <form method="POST" name="form">
-                <h4>Add new team member</h4>
+                <h4>Add new user</h4>
                 <div class="form-group">
-                    <input type="text" name="first-name" class="main-input" placeholder="First Name">
+                    <input type="text" name="firstname" class="main-input" placeholder="First Name">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="last-name" class="main-input" placeholder="Last Name">
+                    <input type="text" name="lastname" class="main-input" placeholder="Last Name">
                 </div>
                 <div class="form-group">
                     <input type="text" name="position" class="main-input" placeholder="Position">
                 </div>
                 <div class="form-group">
-                    <input type="file" name="image" class="main-input" placeholder="Upload image">
+                    <input type="file" class="main-input" name="image" placeholder="Image">
                 </div>
                 <div class="form-group">
                     <textarea name="biography" id="" cols="30" rows="10" class="main-input" placeholder="Biography"></textarea>
@@ -73,3 +66,4 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
         header("Location: index.php");
     } ?>
 </nav>
+
