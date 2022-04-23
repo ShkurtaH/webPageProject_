@@ -843,3 +843,232 @@ input[type=submit]{
     outline: none;
     border:none;
 }
+.register-form p a,
+.login-form p a{
+    color: #767c2a;
+}
+.nav-btn{
+    display: none;
+}
+#nav-check {
+    display: none;
+}
+.responsive-show{
+    display: none;
+}
+
+
+/*Media queries*/
+@media only screen and (max-width: 1441px){
+    .portfolio .portfolio-page-item figure, .portfolio .portfolio-page-item figure img{
+        height: 525px;
+    }
+}
+@media only screen and (max-width: 1024px){
+
+    footer .content .footer-widget{
+        width: 30%;
+    }
+    h2{
+        line-height: 45px;
+    }
+    .main-container ul{
+        margin-bottom: 30px;
+    }
+    .about-main-content .main-container ul li{
+        width: 275px;
+        margin-right: 30px;
+    }
+    .portfolio-list{
+        box-shadow: unset;
+    }
+    .portfolio .portfolio-page-item{
+        width: 49%;
+    }
+    .portfolio-contact{
+        justify-content: space-between;
+    }
+    .custom-responsive-space.contact-container{
+        margin-bottom: 0;
+    }
+    .responsive-flex{
+        flex-direction: column;
+    }
+    .flex.form-group-submit-wrapper{
+        justify-content: flex-start;
+        margin-bottom: 30px;
+    }
+    .contact-box-info{
+        margin-left: 0;
+    }
+    .map{
+        margin-bottom: -5px;
+    }
+}
+@media only screen and (max-width: 768px){
+    .btn,
+    .header .navigation ul li a,
+    footer .content .footer-bottom{
+        font-size: 14px;
+    }
+    .responsive-main-content,
+    .teamworker .photographer{
+        flex-direction: column;
+    }
+    .main-content .main-content-image{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .main-content .main-content-description,
+    .main-content .main-content-image img,
+    .about-main-content .main-container ul li{
+        width: 100%;
+    }
+    .about-main-content .main-container ul li{
+        height: auto;
+    }
+    footer .content .footer-widget{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    footer .content .footer-bottom{
+        text-align: left;
+    }
+    .space {
+        padding: 20px 20px 20px;
+    }
+    .about-main-content ul{
+        flex-direction: column;
+        padding-right: 80px;
+    }
+    .about-main-content ul li{
+        margin-bottom: 30px;
+    }
+    .teamworker .photographer img{
+        margin: 0 auto;
+    }
+    .teamworker{
+        padding: 40px 0;
+        text-align: center;
+    }
+    .portfolio .portfolio-page-item figure, .portfolio .portfolio-page-item figure img{
+        height: 440px;
+    }
+    .contact-info h2{
+        text-align: left;
+        font-size: 34px;
+    }
+
+}
+@media only screen and (max-width: 428px){
+    .navigation{
+        position: relative;
+        min-width: 250px;
+        text-align: center;
+    }
+    .navigation ul{
+        margin-top: 80px;
+        display: block;
+        background-color: #353739;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        top: 40px;
+        left: -109px;
+        overflow-y: hidden;
+        position: relative;
+        z-index: 9;
+        width: 100vw;
+    }
+    .navigation ul li > a {
+        display: block;
+        width: 100%;
+        color: #000;
+    }
+    .nav-btn{
+        display: inline-block;
+        position: absolute;
+        right: -13px;
+        top: -15px;
+        height: 50px;
+        width: 50px;
+    }
+    .nav-btn > label {
+        display: inline-block;
+        width: 30px;
+        height: 50px;
+        padding: 13px;
+    }
+    .nav-btn > label > span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid #eee;
+    }
+    #nav-check:not(:checked) ~ .navigation ul {
+        height: 0px;
+        display: none;
+    }
+    #nav-check:checked ~ .navigation ul {
+        height: 475px;
+        overflow-y: auto;
+        display: block;
+    }
+    .responsive.login{
+        display: none;
+    }
+    .responsive-login.show,
+    .responsive-show{
+        display: block;
+    }
+    .header{
+        padding: 10px 20px;
+    }
+    .header .navigation ul{
+        margin-top: 0px;
+    }
+    .header .navigation ul li{
+        display: block;
+    }
+    .header .navigation ul li a{
+        padding: 20px 0;
+    }
+    .text,
+    .biography-box .description-text{
+        font-size: 14px;
+    }
+    .main-content-description h2,
+    .biography-box h2{
+        font-size: 24px;
+    }
+    footer .content.space{
+        padding: 50px 30px 30px;
+    }
+    .biography-box h2{
+        line-height: 34px;
+    }
+    .photography-box{
+        font-size: 14px;
+    }
+    .portfolio .portfolio-page-item{
+        width: 100%;
+    }
+    .portfolio .portfolio-page-item figure, .portfolio .portfolio-page-item figure img{
+        height: 483px;
+        box-shadow: unset;
+    }
+    form .main-input,
+    .contact-box-info{
+        width: 90%;
+    }
+    .contact-box-info .box-wrapper{
+        width: 90%;
+    }
+    .login-form .form-group-submit-wrapper{
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 376px){
+    h2{
+        font-size: 28px;
+    }
+}

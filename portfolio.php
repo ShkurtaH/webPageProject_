@@ -14,9 +14,6 @@
                     </figure>
                 </div>
                 <?php include "partial/navigation.php";?>
-                <div class="login">
-                    <a href="register.php" class="btn">SIGN UP</a>
-                </div>
             </div>
             <div class="banner-content">
                 <p>
@@ -52,7 +49,7 @@
         <!-- Portfolio Ends -->
         <!-- Main content starts-->
         <div class="portfolio-contact">
-            <div class="contact-container">
+            <div class="contact-container custom-responsive-space">
                 <h2>
                     We are happy to <br> answer any questions you may <br> have.
                 </h2>

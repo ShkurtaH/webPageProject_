@@ -36,9 +36,6 @@ if (isset($_POST['submit'])) {
                 </figure>
             </div>
             <?php include("partial/navigation.php") ?>
-            <div class="login">
-                <a href="register.php" class="btn">SIGN UP</a>
-            </div>
         </div>
         <div class="banner-content">
             <p>
@@ -52,7 +49,7 @@ if (isset($_POST['submit'])) {
             <h2>We are looking forward to your contact!</h2>
         </div>
         <div class="message"></div>
-        <div class="flex">
+        <div class="flex responsive-flex">
             <form method="POST" id="contactForm" class="contact-form" name="form">
                 <div class="form-wrapper">
                     <div class="form-group">

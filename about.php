@@ -14,9 +14,6 @@
                 </figure>
             </div>
            <?php include ("partial/navigation.php")?>
-            <div class="login">
-                <a href="register.php" class="btn">SIGN UP</a>
-            </div>
         </div>
         <div class="banner-content">
             <h2>HIGH VALUES</h2>

@@ -2,7 +2,7 @@
 <?php
 // Initialize the session
 session_start();
-
+include_once("Crud.php");
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     header("location: welcome.php");
@@ -101,25 +101,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         </a>
                     </figure>
                 </div>
-                <div class="navigation">
-                    <ul>
-                        <li>
-                            <a href="index.php">Home</a>
-                        </li>
-                        <li>
-                            <a href="about.php"> About</a>
-                        </li>
-                        <li>
-                            <a href="portfolio.php">Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="contact.php">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="login">
-                    <a href="register.php" class="btn">SIGN UP</a>
-                </div>
+                <?php include "partial/navigation.php" ?>
             </div>
             <div class="banner-content">
                 <p>
@@ -128,7 +110,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
         </section>
         <div class='contact-info space'>
-            <div class='flex'>
+            <div class='flex responsive-flex'>
                 <?php
                 if(!empty($login_err)){
                     echo '<div class="alert alert-danger">' . $login_err . '</div>';
@@ -157,7 +139,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             </div>
         </div>
-        </div>;
+        </div>
     </main>
 
     <script>

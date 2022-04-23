@@ -2,7 +2,8 @@
 <?php
 // Include config file
 require_once "db/db.php";
-
+session_start();
+include_once("Crud.php");
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -109,25 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </a>
                     </figure>
                 </div>
-                <div class="navigation">
-                    <ul>
-                        <li>
-                            <a href="index.php">Home</a>
-                        </li>
-                        <li>
-                            <a href="about.php"> About</a>
-                        </li>
-                        <li>
-                            <a href="portfolio.php">Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="contact.php">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="login">
-                    <a href="register.php" class="btn">SIGN UP</a>
-                </div>
+                <?php include "partial/navigation.php"?>
             </div>
             <div class="banner-content">
                 <p>
