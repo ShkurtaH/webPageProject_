@@ -1,10 +1,11 @@
 <?php
-// Enter your Host, username, password, database below.
-// I left password empty because i do not set password on localhost.
-$con = mysqli_connect("localhost","root","","photography");
+// Enter your host name, database username, password, and database name.
+// If you have not set database password on localhost then set empty.
+
+
+$con = new mysqli("localhost","root","","photography");
 // Check connection
-if (mysqli_connect_errno())
-{
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+if ($con === false){
+    echo "Failed to connect to database: " . $con->connect_error();
 }
 ?>

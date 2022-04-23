@@ -29,7 +29,7 @@
                 </ul>
             </div>
             <div class="login">
-                <a href="register.php" class="btn">Log In</a>
+                <a href="register.php" class="btn">SIGN UP</a>
             </div>
         </div>
         <div class="banner-content">
@@ -113,7 +113,7 @@
     <div class="map">
         <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46940.162381558395!2d21.12370785217964!3d42.666437879992586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ee605110927%3A0x9365bfdf385eb95a!2sPrishtin%C3%AB!5e0!3m2!1ssq!2s!4v1595352926798!5m2!1ssq!2s"
-                width="100%" height="450" frameborder="0" style="border:0; margin-bottom: -4px;" allowfullscreen="" aria-hidden="false"
+                width="100%" height="450";  style="border:0; margin-bottom: -4px;" allowfullscreen="" aria-hidden="false"
                 tabindex="0"></iframe>
     </div>
 </main>
@@ -165,7 +165,7 @@
             if (emailRegEx.test(email)) {
                 email_error.innerHTML = "";
             } else {
-                email_error.textContent = "Email should be something like this : shkurtehoxha@gmail.com";
+                email_error.textContent = "Email should be something like this : shkurtahoxha@gmail.com";
                 event.preventDefault();
             }
         }
@@ -200,7 +200,7 @@
             if (emailRegEx.test(email.value)) {
                 email_error.innerText = "";
             } else {
-                email_error.innerText = "Email must be something like this shkurtehoxha@gmail.com!";
+                email_error.innerText = "Email must be something like this: shkurtahoxha@gmail.com!";
                 event.preventDefault();
             }
 

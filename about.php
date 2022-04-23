@@ -1,4 +1,5 @@
 <?php include('layout/header.php') ?>
+<?php include_once ("Crud.php") ?>
 <!-- Main Starts -->
 <main>
     <!-- Banner Starts -->
@@ -14,22 +15,19 @@
             </div>
             <div class="navigation">
                 <ul>
-                    <li>
-                        <a href="index.php">Home</a>
-                    </li>
-                    <li>
-                        <a href="#" class="active"> About</a>
-                    </li>
-                    <li>
-                        <a href="portfolio.php">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="contact.php">Contact</a>
-                    </li>
+                    <?php
+                    $crud = new crud();
+                    $result = $crud->selectalldata("navigation");
+                    while ($data = mysqli_fetch_array($result)) {
+                        ?>
+                        <li>
+                            <a href="<?php echo $data['url']; ?>"><?php echo $data['title']; ?></a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
             <div class="login">
-                <a href="register.php" class="btn">Log In</a>
+                <a href="register.php" class="btn">SIGN UP</a>
             </div>
         </div>
         <div class="banner-content">
@@ -46,42 +44,25 @@
     <div class="about-main-content">
         <div class="main-container">
             <ul>
-                <li>
-                    <span class="feature-label">02</span>
-                    <br>
-                    <span class="icon-feature">
-                            <img src="assets/images/general/passion.png" alt="Passion">
+                <?php
+                $crud = new crud();
+                $result = $crud->selectalldata("features");
+                while ($data = mysqli_fetch_array($result)) {
+                    ?>
+                    <li>
+                        <span class="feature-label"><?php echo $data['step']; ?></span>
+                        <br>
+                        <span class="icon-feature">
+                            <img src="assets/images/general/<?php echo $data['icon']; ?>" alt="Passion">
                         </span>
-                    <h2 class="feature-title">PASSION</h2>
-                    <div class="feature-text">
-                        Our desire to produce good work runs deep – that’s what lets us handle every project with
-                        fresh energy and enthusiasm.
-                    </div>
-                </li>
-                <li>
-                    <span class="feature-label">03</span>
-                    <br>
-                    <span class="icon-feature">
-                            <img src="assets/images/general/empathy.png" alt="Empathy">
-                        </span>
-                    <h2 class="feature-title">EMPATHY</h2>
-                    <div class="feature-text">
-                        While we share our knowledge and experience, we listen hard to understand your business and
-                        your needs.
-                    </div>
-                </li>
-                <li>
-                    <span class="feature-label">04</span>
-                    <br>
-                    <span class="icon-feature">
-                            <img src="assets/images/general/teamWork.png" alt="TeamWork">
-                        </span>
-                    <h2 class="feature-title">TEAMWORK</h2>
-                    <div class="feature-text">
-                        We are united with you - think of us as extra members of your team with all the skills you need.
-                    </div>
-                </li>
+                        <h2 class="feature-title"><?php echo $data['title']; ?></h2>
+                        <div class="feature-text">
+                            <?php echo $data['teaser']; ?>
+                        </div>
+                    </li>
+                <?php }
 
+                ?>
             </ul>
         </div>
     </div>

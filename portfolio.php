@@ -45,7 +45,7 @@
                     </ul>
                 </div>
                 <div class="login">
-                    <a href="register.php" class="btn">Log In</a>
+                    <a href="register.php" class="btn">SIGN UP</a>
                 </div>
             </div>
             <div class="banner-content">
