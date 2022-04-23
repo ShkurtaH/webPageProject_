@@ -58,9 +58,15 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
             </form>
         </div>
     <?php } else { ?>
-        <!-- FOR USERS -->
-        <h2>Welcome <?= $_SESSION['username'] ?></h2>
-        <a href="logout.php" class="btn btn-dark">Logout</a>
+        <div class="admin-top-header flex custom-justify">
+            <figure class="admin-logo">
+                <img src="assets/images/general/Vanesa-Photographer.jpg" alt="" title="">
+            </figure>
+            <div class="dashboard-btns flex">
+                <p>Welcome <strong><?= $_SESSION['username'] ?></strong></p>
+                <a href="logout.php" class="btn">Logout</a>
+            </div>
+        </div>
     <?php } ?>
     <?php } else {
         header("Location: index.php");

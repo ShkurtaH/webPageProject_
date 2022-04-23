@@ -61,7 +61,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
         </div>
 
     <?php } else { ?>
-        <!-- FORE USERS -->
+        <!-- FOR USERS -->
         <div class="admin-top-header flex custom-justify">
             <figure class="admin-logo">
                 <img src="assets/images/general/Vanesa-Photographer.jpg" alt="" title="">
