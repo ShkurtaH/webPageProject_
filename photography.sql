@@ -157,7 +157,7 @@ CREATE TABLE `navigation` (
 INSERT INTO `navigation` (`id`, `title`, `url`) VALUES
 (5, 'Home', '/'),
 (6, 'About', 'about.php'),
-(7, 'Portfolio', 'portfolio.php'),
+(7, 'Portfolio', 'portfolio-dashboard.php'),
 (8, 'Contact', 'contact.php');
 
 -- --------------------------------------------------------

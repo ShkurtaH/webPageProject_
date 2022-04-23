@@ -8,8 +8,8 @@ if(!empty($_GET['delid']))
     $id=$_GET['delid'];
 
     $crud = new crud();
-    $crud->deletedata("team",$id);
-    header('location:team-list.php');
+    $crud->deletedata("portfolio",$id);
+    header('location:portfolio-list.php');
 }
 session_start();
 if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
@@ -26,16 +26,12 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
         </div>
     </div>
     <div class="tabset">
-        <h4>Team members list:</h4>
-        <table class="table table-striped" style="width: 100%">
+        <h4>Portfolio gallery list:</h4>
+        <table class="table table-striped" style="width: 80%">
             <thead>
             <tr>
                 <th>Id</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Position</th>
                 <th>Image</th>
-                <th>Biography</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -43,25 +39,21 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
             <tbody>
             <?php
             $crud= new crud();
-            $result = $crud->selectalldata("team");
+            $result = $crud->selectalldata("portfolio");
 
             while($data = mysqli_fetch_array($result))
             {
                 ?>
                 <tr>
                     <td><?php echo $data['id']; ?></td>
-                    <td><?php echo $data['firstname']; ?></td>
-                    <td><?php echo $data['lastname']; ?></td>
-                    <td><?php echo $data['position']; ?></td>
                     <td><img src="assets/images/general/<?php echo $data['image']; ?>" style="width: 40px;"></td>
-                    <td><?php echo $data['biography']; ?></td>
-                    <td><a href="edit-team.php?editid=<?php echo $data['id'];?>">edit</td>
-                    <td><a href="team-list.php?delid=<?php echo $data['id'];?>" onclick=" return confirm('Do You really want to delete this data')">delete</td>
+                    <td><a href="edit-portfolio.php?editid=<?php echo $data['id'];?>">edit</td>
+                    <td><a href="portfolio-list.php?delid=<?php echo $data['id'];?>" onclick=" return confirm('Do You really want to delete this data')">delete</td>
                 </tr>
             <?php } ?>
             </tbody>
         </table>
-        <a href="add-team.php" class="btn">Add new team</a>
+        <a href="add-portfolio.php" class="btn">Add new item</a>
         <a href="dashboard.php" class="btn">Back to dashboard list</a>
     </div>
     <?php } else { ?>

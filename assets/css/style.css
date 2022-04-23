@@ -144,6 +144,7 @@ h2{
 }
 .portfolio-contact .contact-container h2{
     font-size: 40px;
+    line-height: 40px;
     font-weight: 600;
     color: #fff;
 }

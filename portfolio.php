@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>
-        WebPageProject
-    </title>
-
-    <!-- Literata Googl Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata&display=swap">
-    <!-- FontAwesome Library CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-<body>
+<?php include('layout/header.php') ?>
+<?php include_once ("Crud.php") ?>
     <!-- Main Starts -->
     <main>
         <!-- Banner Starts -->
@@ -28,22 +13,7 @@
                         </a>
                     </figure>
                 </div>
-                <div class="navigation">
-                    <ul>
-                        <li>
-                            <a href="index.php">Home</a>
-                        </li>
-                        <li>
-                            <a href="about.php"> About</a>
-                        </li>
-                        <li>
-                            <a href="#" class="active">Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="contact.php">Contact</a>
-                        </li>
-                    </ul>
-                </div>
+                <?php include "partial/navigation.php";?>
                 <div class="login">
                     <a href="register.php" class="btn">SIGN UP</a>
                 </div>
@@ -53,7 +23,7 @@
                     “When words become unclear, I shall focus with photographs. When images become inadequate, I shall
                     be content with silence.”
                 </p>
-                <a href="#photography-portfolio" class="btn"> Portfolio</a>
+                <a href="#photography-portfolio" class="btn"> Explore</a>
             </div>
         </section>
         <!-- Banner Ends -->
@@ -65,53 +35,18 @@
                 </h2>
             </div>
             <div class="portfolio-list">
-                <div class="portfolio-page-item">
-                    <figure>
-                        <img src="assets/images/general/Nature-photography4.jpg" alt="Portfolio 1">
-                    </figure>
-                </div>
-                <div class="portfolio-page-item">
-                    <figure>
-                        <img src="assets/images/general/Nature-photography2.jpg" alt="Portfolio 2">
-                    </figure>
-                </div>
-                <div class="portfolio-page-item">
-                    <figure>
-                        <img src="assets/images/general/Nature-photography3.jpg" alt="Portfolio 3">
-                    </figure>
-                </div>
-                <div class="portfolio-page-item">
-                    <figure>
-                        <img src="assets/images/general/street-photography1.jpg" alt="Portfolio 4">
-                    </figure>
-                </div>
-                <div class="portfolio-page-item">
-                    <figure>
-                        <img src="assets/images/general/street-photography2.jpg" alt="Portfolio 5">
-                    </figure>
-                </div>
-
-                <div class="portfolio-page-item">
-                    <figure>
-                        <img src="assets/images/general/street-photography3.jpg" alt="Portfolio 6">
-                    </figure>
-                </div>
-
-                <div class="portfolio-page-item">
-                    <figure>
-                        <img src="assets/images/general/Animals-photography2.jpg" alt="Portfolio 7">
-                    </figure>
-                </div>
-                <div class="portfolio-page-item">
-                    <figure>
-                        <img src="assets/images/general/Animals-photography1.jpg" alt="Portfolio 8">
-                    </figure>
-                </div>
-                <div class="portfolio-page-item">
-                    <figure>
-                        <img src="assets/images/general/Animals-photography3.jpg" alt="Portfolio 9">
-                    </figure>
-                </div>
+                <?php
+                $crud = new crud();
+                $result = $crud->selectalldata("portfolio");
+                while ($data = mysqli_fetch_array($result)) {
+                    ?>
+                    <div class="portfolio-page-item">
+                        <figure>
+                            <img src="assets/images/general/<?php echo $data['image']; ?>" alt="<?php echo $data['id']; ?>">
+                        </figure>
+                    </div>
+                <?php }
+                ?>
             </div>
         </section>
         <!-- Portfolio Ends -->
@@ -188,6 +123,4 @@
         </div>
     </footer>
     <!-- Footer Ends -->
-</body>
-
-</html>
+<?php include('layout/footer.php') ?>

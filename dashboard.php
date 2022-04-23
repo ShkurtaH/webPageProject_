@@ -33,6 +33,9 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
             <!-- Tab 5 -->
             <input type="radio" name="tabset" id="tab5" aria-controls="team">
             <label for="tab5">Team</label>
+            <!-- Tab 6 -->
+            <input type="radio" name="tabset" id="tab6" aria-controls="portfolio">
+            <label for="tab6">Portfolio</label>
 
             <div class="tab-panels">
                 <section id="users" class="tab-panel">
@@ -49,6 +52,9 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
                 </section>
                 <section id="team" class="tab-panel">
                    <?php include "php/team.php"; ?>
+                </section>
+                <section id="portfolio" class="tab-panel">
+                   <?php include "php/portfolio-dashboard.php"; ?>
                 </section>
             </div>
 
