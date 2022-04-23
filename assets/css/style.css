@@ -295,6 +295,10 @@ form .main-input{
     font-family: 'Literata';
     font-size: 16px;
 }
+form select.main-input{
+    height: 45px;
+    width: 545px;
+}
 form .main-input:focus{
     border: 2px solid #767c2a;
     outline: none;

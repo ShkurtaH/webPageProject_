@@ -30,5 +30,5 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) {
         } ?>
         </tbody>
     </table>
-    <a href="" class="btn">Manage users</a>
+    <a href="users-list.php" class="btn">Manage users</a>
 <?php } ?>
