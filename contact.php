@@ -1,4 +1,27 @@
-<?php include('layout/header.php') ?>
+<?php
+include("layout/header.php");
+include_once("Crud.php");
+
+$crud = new crud();
+
+if (isset($_POST['submit'])) {
+    $data = array(
+        "name" => $crud->escape_string($_POST['name']),
+        "surname" => $crud->escape_string($_POST['surname']),
+        "email" => $crud->escape_string($_POST['email']),
+        "message" => $crud->escape_string($_POST['message']),
+    );
+
+    $crud->insert($data, 'contact');
+
+    if ($data) {
+        echo '';
+        header('location:sent-message.php');
+    } else {
+        echo 'try again';
+    }
+}
+?>
 <main>
     <!-- Main Starts -->
     <!-- Banner Starts -->
@@ -12,22 +35,7 @@
                     </a>
                 </figure>
             </div>
-            <div class="navigation">
-                <ul>
-                    <li>
-                        <a href="index.php">Home</a>
-                    </li>
-                    <li>
-                        <a href="about.php"> About</a>
-                    </li>
-                    <li>
-                        <a href="portfolio.php">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="contact.php" class="active">Contact</a>
-                    </li>
-                </ul>
-            </div>
+            <?php include("partial/navigation.php") ?>
             <div class="login">
                 <a href="register.php" class="btn">SIGN UP</a>
             </div>
@@ -41,37 +49,30 @@
     </section>
     <div class="contact-info space">
         <div class="center mb-30">
-            <div class="success-message hide">
-                Thank you for getting in touch!<br>
-                We appreciate you contacting us/ [Photography]. <br>One of our colleagues will get back in touch with
-                you soon!Have a great day!
-            </div>
-        </div>
-        <div class="center mb-30">
             <h2>We are looking forward to your contact!</h2>
         </div>
-
+        <div class="message"></div>
         <div class="flex">
-            <form action="sent-message.php" method="post" id="contactForm" class="contact-form" name="contact-form">
+            <form method="POST" id="contactForm" class="contact-form" name="form">
                 <div class="form-wrapper">
                     <div class="form-group">
-                        <input type="text" name="name" value="" placeholder="Name" class="main-input">
+                        <input type="text" name="name" placeholder="Name" class="main-input">
                         <div id="name-error" class="text-error"></div>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="surname" value="" placeholder="Surname" class="main-input">
+                        <input type="text" name="surname" placeholder="Surname" class="main-input">
                         <div id="surname-error" class="text-error"></div>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" value="" placeholder="E-Mail" class="main-input">
+                        <input type="email" name="email" placeholder="E-Mail" class="main-input">
                         <div id="email-error" class="text-error"></div>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" value="message" id="message" cols="60" rows="5" placeholder="Message..." class="main-input main-textarea"></textarea>
+                        <textarea name="message" id="message" cols="60" rows="5" placeholder="Message..." class="main-input main-textarea"></textarea>
                         <div id="message-error" class="text-error"></div>
                     </div>
                     <div class="form-group-submit-wrapper flex">
-                        <button type="submit" class="btn" id="submitBtn">Send</button>
+                        <input type="submit" name="submit" class="btn" id="submitBtn" value="Send">
                     </div>
                 </div>
             </form>
@@ -113,7 +114,7 @@
     <div class="map">
         <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46940.162381558395!2d21.12370785217964!3d42.666437879992586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ee605110927%3A0x9365bfdf385eb95a!2sPrishtin%C3%AB!5e0!3m2!1ssq!2s!4v1595352926798!5m2!1ssq!2s"
-                width="100%" height="450";  style="border:0; margin-bottom: -4px;" allowfullscreen="" aria-hidden="false"
+                width="100%" height="450" ; style="border:0; margin-bottom: -4px;" allowfullscreen="" aria-hidden="false"
                 tabindex="0"></iframe>
     </div>
 </main>
@@ -124,10 +125,10 @@
 
     var button = document.getElementById("submitBtn");
 
-    var Name = document.forms["contact-form"]["name"];
-    var surname = document.forms["contact-form"]["surname"];
-    var email = document.forms["contact-form"]["email"];
-    var message = document.forms["contact-form"]["message"];
+    var Name = document.forms["form"]["name"];
+    var surname = document.forms["form"]["surname"];
+    var email = document.forms["form"]["email"];
+    var message = document.forms["form"]["message"];
 
     var emailRegEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
@@ -210,7 +211,6 @@
             message.focus();
             event.preventDefault();
         }
-
 
     });
 

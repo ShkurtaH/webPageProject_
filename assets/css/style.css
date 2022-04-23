@@ -595,6 +595,9 @@ footer .content .footer-bottom p{
 
 
 /* Admin Dashboard*/
+.admin-form button[type=submit]{
+    margin-right: 75px;
+}
 .dashboard-btns p{
     margin: 0;
     margin-top: 10px;
@@ -759,7 +762,8 @@ only screen and (max-width: 760px),
 .tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
 .tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
 .tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
-.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6),
+.tabset > input:nth-child(13):checked ~ .tab-panels > .tab-panel:nth-child(7){
     display: block;
 }
 

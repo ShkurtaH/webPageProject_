@@ -8,7 +8,7 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) { ?>
             <div class="form-wrapper">
                 <h1 class="text-center p-3">LOGIN</h1>
                 <?php if (isset($_GET['error'])) { ?>
-                    <div class="alert alert-danger" role="alert">
+                    <div class="text-error mb-30" role="alert">
                         <?= $_GET['error'] ?>
                     </div>
                 <?php } ?>
@@ -17,9 +17,6 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) { ?>
                 </div>
                 <div class="form-group">
                     <input type="password" name="password" placeholder="Password" class="main-input" id="password">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Select User Type:</label>
                 </div>
                 <div class="form-group">
                     <select class="main-input"
@@ -37,5 +34,5 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) { ?>
         </form>
     </div>
 <?php } else {
-    header("Location: home.php");
+    header("Location: dashboard.php");
 } ?>

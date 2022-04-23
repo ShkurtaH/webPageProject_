@@ -12,9 +12,10 @@ class Dbconnect
     {
 
         if (!isset($this->connection)) {
-
             $this->connection = new mysqli($this->_localhost, $this->_user, $this->_password, $this->_dbname);
-
+        }
+        else{
+            echo "connection failed";
         }
 
         return $this->connection;

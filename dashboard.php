@@ -14,6 +14,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
             </figure>
             <div class="dashboard-btns">
                 <?= $_SESSION['username'] ?>
+                <a href="index.php" class="btn">Visit Site</a>
                 <a href="logout.php" class="btn">Logout</a>
             </div>
         </div>
@@ -36,6 +37,9 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
             <!-- Tab 6 -->
             <input type="radio" name="tabset" id="tab6" aria-controls="portfolio">
             <label for="tab6">Portfolio</label>
+            <!-- Tab 7 -->
+            <input type="radio" name="tabset" id="tab7" aria-controls="test">
+            <label for="tab7">Contact</label>
 
             <div class="tab-panels">
                 <section id="users" class="tab-panel">
@@ -56,6 +60,10 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
                 <section id="portfolio" class="tab-panel">
                    <?php include "php/portfolio-dashboard.php"; ?>
                 </section>
+                <section id="test" class="tab-panel">
+                   <?php include "php/contact-dashboard.php"; ?>
+                </section>
+
             </div>
 
         </div>
