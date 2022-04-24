@@ -32,6 +32,7 @@ if (isset($_POST['submit'])) {
             "password" => $crud->escape_string($_POST['password']),
             "role" => $crud->escape_string($_POST['role']),
         );
+        $password = md5($password);
         $crud->insert($data, 'users');
         if ($data) {
             echo 'insert successfully';

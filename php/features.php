@@ -1,13 +1,12 @@
 <?php
 
 if (isset($_SESSION['username']) && isset($_SESSION['id'])) {
-
-    $sql = "SELECT * FROM features ORDER BY id ASC";
-    $res = mysqli_query($con, $sql);
+    $crud = new crud();
+    $result = $crud->selectalldata("features");
 } else {
     header("Location: index.php");
 } ?>
-<?php if (mysqli_num_rows($res) > 0) { ?>
+<?php if (mysqli_num_rows($result) > 0) { ?>
     <h1 class="display-4 fs-1">List of features items</h1>
     <table class="table table-striped" style="width: 60%">
         <thead>
@@ -22,7 +21,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) {
         <tbody>
         <?php
         $i = 1;
-        while ($rows = mysqli_fetch_assoc($res)) { ?>
+        while ($rows = mysqli_fetch_assoc($result)) { ?>
             <tr>
                 <td><?= $rows['id'] ?></td>
                 <td><?= $rows['step'] ?></td>

@@ -7,7 +7,6 @@ class Dbconnect
     private $_password = '';
     private $_dbname = 'photography';
     protected $connection;
-
     public function __construct()
     {
 
