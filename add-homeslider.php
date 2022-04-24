@@ -4,20 +4,31 @@ include_once("Crud.php");
 
 $crud = new crud();
 
+$title = $image = "";
+$title_err = $image_err = "";
 if (isset($_POST['submit'])) {
-    $data = array(
-        "title" => $crud->escape_string($_POST['title']),
-        "image" => $crud->escape_string($_POST['image'])
-    );
-
-    $crud->insert($data, 'homeslider');
-
-    if ($data) {
-        echo 'insert successfully';
-        header('location:listing.php');
-    } else {
-        echo 'try again';
+    if (empty(trim($_POST["title"]))) {
+        $title_err = "Please enter a title.";
     }
+    if (empty(trim($_POST["image"]))) {
+        $image_err = "Please upload an image";
+    }
+    if (empty($title_err) && empty($image_err)) {
+        $data = array(
+            "title" => $crud->escape_string($_POST['title']),
+            "image" => $crud->escape_string($_POST['image'])
+        );
+
+        $crud->insert($data, 'homeslider');
+
+        if ($data) {
+            echo 'insert successfully';
+            header('location:listing.php');
+        } else {
+            echo 'try again';
+        }
+    }
+
 }
 session_start();
 if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
@@ -38,9 +49,11 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
                 <h4>Create new slider</h4>
                 <div class="form-group">
                     <input type="text" name="title" placeholder="Title" class="main-input">
+                    <div id="title-error" class="text-error"><?php echo $title_err; ?></div>
                 </div>
                 <div class="form-group">
                     <input type="file" name="image" placeholder="Upload Image" class="main-input">
+                    <div id="image-error" class="text-error"><?php echo $image_err; ?></div>
                 </div>
                 <div class="form-group">
                     <input type="submit" name="submit" class="btn" value="Save">
