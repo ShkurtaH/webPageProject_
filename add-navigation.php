@@ -51,7 +51,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
                 <div class="form-group">
                     <input type="text" name="url" class="main-input" placeholder="Url">
                     <div id="url-error" class="text-error"><?php echo $url_err; ?></div>
-                </div> 
+                </div>
                 <div class="form-group">
                     <input type="submit" name="submit" class="btn" value="Save">
                 </div>
