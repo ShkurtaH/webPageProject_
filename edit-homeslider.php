@@ -53,11 +53,11 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
                 <h4>Update <strong>"<?= $data['title'] ?>"</strong> entry</h4>
                 <div class="form-group">
                     <input type="text" name="title" placeholder="Title" class="main-input" value="<?php echo $data['title']; ?>">
-                    <div id="title-error" class="text-error"><?php echo $title_err; ?></div>
+                    <div id="title-error-1" class="text-error"><?php echo $title_err; ?></div>
                 </div>
                 <div class="form-group">
                     <input type="file" name="image" placeholder="Upload Image" class="main-input" value="<?php echo $data['image']; ?> ">
-                    <div id="image-error" class="text-error"><?php echo $image_err; ?></div>
+                    <div id="image-error-1" class="text-error"><?php echo $image_err; ?></div>
                 </div>
                 <div class="form-group">
                     <input type="submit" name="submit" class="btn" value="Update">
