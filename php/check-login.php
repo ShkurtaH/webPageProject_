@@ -32,7 +32,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['role
             // the user name must be unique
             $row = mysqli_fetch_assoc($result);
             if ($row['password'] === $password && $row['role'] == $role) {
-                $_SESSION['usersID'] = $row['usersID'];
+                $_SESSION['id'] = $row['id'];
                 $_SESSION['role'] = $row['role'];
                 $_SESSION['username'] = $row['username'];
 

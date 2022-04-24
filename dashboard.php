@@ -85,5 +85,3 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) { ?>
         <?php } else {
             header("Location: index.php");
         } ?>
-    </nav>
-</div>

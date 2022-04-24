@@ -29,10 +29,9 @@ if (isset($_POST['submit'])) {
     if (empty($username_err) && empty($password_err) && empty($role_err)) {
         $data = array(
             "username" => $crud->escape_string($_POST['username']),
-            "password" => $crud->escape_string($_POST['password']),
+            "password" => md5($crud->escape_string($_POST['password'])),
             "role" => $crud->escape_string($_POST['role']),
         );
-        $password = md5($password);
         $crud->insert($data, 'users');
         if ($data) {
             echo 'insert successfully';

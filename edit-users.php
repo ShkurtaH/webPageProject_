@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
         $data = array(
 
             "username" => $crud->escape_string($_POST['username']),
-            "password" => $crud->escape_string($_POST['password']),
+            "password" => md5($crud->escape_string($_POST['password'])),
             "role" => $crud->escape_string($_POST['role']),
 
         );

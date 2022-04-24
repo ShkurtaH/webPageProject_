@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_SESSION['username']) && isset($_SESSION['id'])) {
-    $crud = new crud();
+    $crud= new crud();
     $result = $crud->selectalldata("users");
 } else {
     header("Location: index.php");

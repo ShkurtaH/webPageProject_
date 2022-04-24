@@ -19,17 +19,12 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) { ?>
                     <input type="password" name="password" placeholder="Password" class="main-input" id="password">
                 </div>
                 <div class="form-group">
-                    <select class="main-input"
-                            name="role"
-                            aria-label="Default select example">
+                    <select class="main-input" name="role" aria-label="Default select example">
                         <option selected value="user">User</option>
                         <option value="admin">Admin</option>
                     </select>
                 </div>
-
-
-                <button type="submit" class="btn">LOGIN
-                </button>
+                <button type="submit" class="btn">LOGIN</button>
             </div>
         </form>
     </div>
