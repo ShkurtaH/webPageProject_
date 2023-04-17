@@ -127,7 +127,7 @@ if (isset($_POST['submit'])) {
     var email = document.forms["form"]["email"];
     var message = document.forms["form"]["message"];
 
-    var emailRegEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    var emailRegEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,3}$/;
 
     var name_error = document.getElementById("name-error");
     var surname_error = document.getElementById("surname-error");
@@ -147,7 +147,7 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    function verifySurname() {
+    function veurnarifySme() {
         if (surname.value != "") {
             surname_error.innerHTML = "";
             return true;

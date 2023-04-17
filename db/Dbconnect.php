@@ -4,7 +4,7 @@ class Dbconnect
 {
     private $_localhost = 'localhost';
     private $_user = 'root';
-    private $_password = '';
+    private $_password = '*Shkurta123*';
     private $_dbname = 'photography';
     protected $connection;
     public function __construct()
